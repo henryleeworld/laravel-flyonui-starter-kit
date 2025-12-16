@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ $title ?? __('Dashboard') }} | {{ config('app.name', 'Laravel') }}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    @vite(['resources/css/app.css'])
+</head>
+<body>
+    <div class="bg-base-200 flex min-h-screen flex-col">
+        @include('layouts.header')
+        @include('layouts.sidebar')
+        <div class="lg:ps-75 flex grow flex-col">
+            <main class="mx-auto w-full max-w-[1280px] flex-1 grow space-y-6 p-6">
+                @yield('content')
+            </main>
+            <footer class="mx-auto w-full max-w-[1280px] px-6 py-3.5 text-sm">
+                <div class="flex items-center justify-between gap-3 max-lg:flex-col">
+                    <p class="text-base-content text-center">
+                        &copy;{{ date('Y') }}
+                        {{ __('by Henry Lee') }}
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    @vite(['resources/js/app.js'])
+    <script type="text/javascript">
+        (function() {
+            try {
+                const root = document.documentElement;
+                const savedTheme = localStorage.getItem('theme') || 'light';
+                root.setAttribute('data-theme', savedTheme);
+            } catch (e) {
+                console.warn('Early theme script error:', e);
+            }
+        })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flyonui@latest/dist/js/flyonui.js"></script>
+    @stack('scripts')
+</body>
+
+</html>
