@@ -1,4 +1,4 @@
-# Laravel 12 FlyonUI 入門套件
+# Laravel 13 FlyonUI 入門套件
 
 入門套件採用具有語義化類別的 Tailwind CSS 元件庫和強大的 JavaScript 插件建置，所有後端和前端代碼都存在於您的應用程式內，以實現完全自訂。
 
@@ -39,14 +39,14 @@ $ php artisan test
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/1J7Yh11.png)
+![](https://i.imgur.com/b15bwue.png)
 > 檢查程式碼是否如預期般執行
 
-![](https://i.imgur.com/zqRFUt9.png)
+![](https://i.imgur.com/RCduQUI.png)
 > 建立新的帳號
 
-![](https://i.imgur.com/moby1Ws.png)
+![](https://i.imgur.com/tCt02by.png)
 > 使用現有的帳號登入後，進入控制面板
 
-![](https://i.imgur.com/Csy1fkO.png)
+![](https://i.imgur.com/jeqfwRU.png)
 > 編輯使用者的個人資料
