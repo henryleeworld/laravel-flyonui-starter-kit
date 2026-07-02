@@ -86,7 +86,7 @@
                         <div>
                             <label class="label-text" for="userPassword">{{ __('Password') }}*</label>
                             <div class="input @error('password') input-error @enderror">
-                                <input id="userPassword" name="password" type="password" placeholder="············" required />
+                                <input id="userPassword" name="password" type="password" autocomplete="new-password" placeholder="············" passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}" required />
                                 <button type="button" data-toggle-password='{ "target": "#userPassword" }' class="block cursor-pointer" aria-label="userPassword">
                                     <span class="icon-[tabler--eye] password-active:block hidden size-5 shrink-0"></span>
                                     <span class="icon-[tabler--eye-off] password-active:hidden block size-5 shrink-0"></span>
@@ -99,7 +99,7 @@
                         <div>
                             <label class="label-text" for="userConfirmPassword">{{ __('Confirm Password') }}*</label>
                             <div class="input">
-                                <input id="userConfirmPassword" name="password_confirmation" type="password" placeholder="············" required />
+                                <input id="userConfirmPassword" name="password_confirmation" type="password" autocomplete="new-password" placeholder="············" passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}" required />
                                 <button type="button" data-toggle-password='{ "target": "#userConfirmPassword" }' class="block cursor-pointer" aria-label="userConfirmPassword">
                                     <span class="icon-[tabler--eye] password-active:block hidden size-5 shrink-0"></span>
                                     <span class="icon-[tabler--eye-off] password-active:hidden block size-5 shrink-0"></span>

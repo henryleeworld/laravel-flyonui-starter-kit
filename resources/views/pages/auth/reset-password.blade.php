@@ -81,7 +81,7 @@
                     <div x-data="{ showPassword: false }">
                         <label class="label-text" for="userNewPassword">{{ __('New Password') }}*</label>
                         <div class="input">
-                            <input id="userNewPassword" :type="showPassword ? 'text' : 'password'" name="password" placeholder="············" class="@error('password') border-error @enderror" required />
+                            <input id="userNewPassword" :type="showPassword ? 'text' : 'password'" name="password" autocomplete="new-password" placeholder="············" class="@error('password') border-error @enderror" passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}" required />
                             <button type="button" @click="showPassword = !showPassword" class="block cursor-pointer" aria-label="{{ __('Toggle password visibility') }}">
                                 <span x-show="!showPassword" class="icon-[tabler--eye] size-5 shrink-0"></span>
                                 <span x-show="showPassword" class="icon-[tabler--eye-off] size-5 shrink-0"></span>
@@ -95,7 +95,7 @@
                     <div x-data="{ showPasswordConfirm: false }">
                         <label class="label-text" for="userConfirmPassword">{{ __('Confirm Password') }}*</label>
                         <div class="input">
-                            <input id="userConfirmPassword" :type="showPasswordConfirm ? 'text' : 'password'" name="password_confirmation" placeholder="············" required />
+                            <input id="userConfirmPassword" :type="showPasswordConfirm ? 'text' : 'password'" name="password_confirmation" autocomplete="new-password" placeholder="············" passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}" required />
                             <button type="button" @click="showPasswordConfirm = !showPasswordConfirm" class="block cursor-pointer" aria-label="{{ __('Toggle password visibility') }}">
                                 <span x-show="!showPasswordConfirm" class="icon-[tabler--eye] size-5 shrink-0"></span>
                                 <span x-show="showPasswordConfirm" class="icon-[tabler--eye-off] size-5 shrink-0"></span>

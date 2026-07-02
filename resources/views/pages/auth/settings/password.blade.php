@@ -44,7 +44,9 @@
                             id="password"
                             name="password"
                             class="input pr-11"
+                            autocomplete="new-password"
                             placeholder="{{ __('Enter your new password') }}"
+                            passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
                             required
                         />
                         <span @click="showPassword = !showPassword"
@@ -65,7 +67,9 @@
                             id="password_confirmation"
                             name="password_confirmation"
                             class="input pr-11"
+                            autocomplete="new-password"
                             placeholder="{{ __('Confirm your new password') }}"
+                            passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
                             required
                         />
                         <span @click="showPassword = !showPassword"
